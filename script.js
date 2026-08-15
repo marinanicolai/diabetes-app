@@ -71,4 +71,31 @@ document.addEventListener('DOMContentLoaded', () => {
       link.style.background = 'rgba(0,0,0,.2)';
     }
   });
+
+  /* ---- Language switcher ---- */
+  const isSpanish = currentPage.endsWith('-es.html');
+
+  // Wire "En Español" / "En Inglés" text links
+  document.querySelectorAll('a').forEach(a => {
+    const text = a.textContent.trim();
+    if (text === 'En Español') {
+      a.href = isSpanish ? currentPage : currentPage.replace('.html', '-es.html');
+    }
+    if (text === 'En Inglés') {
+      a.href = isSpanish ? currentPage.replace('-es.html', '.html') : currentPage;
+    }
+  });
+
+  // Language select dropdown
+  const langSelect = document.querySelector('.lang-select');
+  if (langSelect) {
+    langSelect.value = isSpanish ? 'Español' : 'English';
+    langSelect.addEventListener('change', function () {
+      if (this.value === 'Español' && !isSpanish) {
+        window.location.href = currentPage.replace('.html', '-es.html');
+      } else if (this.value === 'English' && isSpanish) {
+        window.location.href = currentPage.replace('-es.html', '.html');
+      }
+    });
+  }
 });
