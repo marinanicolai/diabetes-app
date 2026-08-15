@@ -261,12 +261,16 @@ ul { list-style: none; }
 }
 .topic-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,.10); transform: translateY(-3px); }
 .topic-card .icon {
-  width: 72px; height: 72px;
+  width: 120px; height: 120px;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 16px;
   color: #8B1A2B;
 }
-.topic-card .icon svg { width: 64px; height: 64px; }
+.topic-card .icon img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+.topic-card .icon svg { width: 72px; height: 72px; }
 .topic-card h3 { font-size: .95rem; font-weight: 700; color: #8B1A2B; margin-bottom: 8px; }
 .topic-card p  { font-size: .82rem; color: var(--gray-500); line-height: 1.5; }
 .topic-card a  { color: #8B1A2B; font-size: .82rem; font-weight: 700; margin-top: 12px; display: inline-block; }
