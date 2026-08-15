@@ -251,27 +251,25 @@ ul { list-style: none; }
   gap: 20px;
 }
 .topic-card {
-  background: var(--white);
-  border: 1px solid var(--gray-300);
-  border-top: 4px solid var(--red);
-  border-radius: var(--radius);
-  padding: 24px 20px;
+  background: #f7f7f7;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  padding: 28px 18px 22px;
   text-align: center;
   transition: box-shadow var(--transition), transform var(--transition);
   cursor: pointer;
 }
-.topic-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+.topic-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,.10); transform: translateY(-3px); }
 .topic-card .icon {
-  width: 56px; height: 56px;
-  background: rgba(196,31,62,.08);
-  border-radius: 50%;
+  width: 72px; height: 72px;
   display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 14px;
-  font-size: 1.6rem;
+  margin: 0 auto 16px;
+  color: #8B1A2B;
 }
-.topic-card h3 { font-size: .95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
+.topic-card .icon svg { width: 64px; height: 64px; }
+.topic-card h3 { font-size: .95rem; font-weight: 700; color: #8B1A2B; margin-bottom: 8px; }
 .topic-card p  { font-size: .82rem; color: var(--gray-500); line-height: 1.5; }
-.topic-card a  { color: var(--red); font-size: .82rem; font-weight: 700; margin-top: 12px; display: inline-block; }
+.topic-card a  { color: #8B1A2B; font-size: .82rem; font-weight: 700; margin-top: 12px; display: inline-block; }
 
 /* ============================================================
    STATS BAND
