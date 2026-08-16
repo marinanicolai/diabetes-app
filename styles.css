@@ -246,8 +246,9 @@ ul { list-style: none; }
    TOPIC CARDS
    ============================================================ */
 .cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
 }
 .topic-card {
@@ -258,6 +259,7 @@ ul { list-style: none; }
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
   transition: box-shadow var(--transition), transform var(--transition);
   cursor: pointer;
+  width: 190px;
 }
 .topic-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.13); transform: translateY(-3px); }
 .topic-card .icon {
@@ -552,12 +554,14 @@ ul { list-style: none; }
   .mega-menu { position: static; min-width: auto; display: none !important; flex-direction: column; gap: 16px; }
   .nav-item.open .mega-menu { display: flex !important; }
   .stats-grid { grid-template-columns: 1fr; gap: 28px; }
-  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .cards-grid { gap: 12px; }
+  .topic-card { width: calc(50% - 6px); }
   .news-grid  { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-  .cards-grid { grid-template-columns: 1fr; }
+  .cards-grid { gap: 10px; }
+  .topic-card { width: 100%; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero { min-height: 400px; }
   .hero h1 { font-size: 1.6rem; }
