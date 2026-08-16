@@ -547,23 +547,33 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .top-bar { display: none; }
   .search-form { display: none; }
+  /* Hide donate buttons in header on mobile — behind hamburger */
+  .header-actions .btn { display: none; }
   .hamburger { display: block; }
   .main-nav { display: none; }
   .main-nav.open { display: block; }
   .nav-list { flex-direction: column; }
   .mega-menu { position: static; min-width: auto; display: none !important; flex-direction: column; gap: 16px; }
   .nav-item.open .mega-menu { display: flex !important; }
-  .stats-grid { grid-template-columns: 1fr; gap: 28px; }
+  /* Stats: 3-col on tablet, matching inspiration */
+  .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  /* Cards: let flex-wrap handle it naturally — no forced 2-per-row */
   .cards-grid { gap: 12px; }
-  .topic-card { width: calc(50% - 6px); }
   .news-grid  { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 480px) {
-  .cards-grid { gap: 10px; }
-  .topic-card { width: 100%; }
+@media (max-width: 580px) {
+  /* At small tablet/large phone let tiles shrink a bit to fit 2-3 per row */
+  .topic-card { width: 160px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+@media (max-width: 420px) {
+  /* On small phones: 2 tiles per row */
+  .topic-card { width: calc(50% - 8px); }
   .footer-grid { grid-template-columns: 1fr; }
   .hero { min-height: 400px; }
   .hero h1 { font-size: 1.6rem; }
   .hero-btns { flex-direction: column; }
+  .cards-grid { gap: 8px; }
 }
