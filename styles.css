@@ -269,12 +269,13 @@ ul { list-style: none; }
   background: #fff;
   border: 1px solid #e8e8e8;
   margin: 0 auto 16px;
-  transition: background var(--transition), border-color var(--transition);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
   color: #8B1A2B;
 }
 .topic-card:hover .icon {
   background: #fce8ec;
   border-color: #e8b4bf;
+  transform: translateY(-6px);
 }
 .topic-card .icon img {
   display: block;
